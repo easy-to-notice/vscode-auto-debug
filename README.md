@@ -1,6 +1,6 @@
-本仓库为原插件的修改版，使用 opencode 在 AI 的辅助下实现。本修改版可以在单文件情况下自动根据文件后缀寻找匹配的调试选项（需要在 `settings.json` 中提前配置）。
+本仓库为原插件的修改版，使用 opencode 在 AI 的辅助下实现。本修改版修复了本人在使用原版插件时遇到的问题。
 
-This repository is a modified version of the original plugin, implemented with the assistance of AI via OpenCode. This modified version can automatically find matching debugging options based on file extensions in single-file scenarios (configuration in `settings.json` is required in advance).
+A modified version of the original plugin, built with AI assistance using OpenCode. This version resolves issues I faced when using the original plugin.
 
 ---
 
