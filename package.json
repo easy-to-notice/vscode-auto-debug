@@ -1,6 +1,6 @@
 {
-    "name": "auto-debug",
-    "displayName": "Auto Debug",
+"name": "auto-debug-no-workspace",
+    "displayName": "Auto Debug (No Workspace)",
     "description": "Automatically switches launch configuration based on a glob of your active file. Enabling context/language aware debugging.",
     "version": "1.0.2",
     "publisher": "DarrenLevine",
@@ -32,22 +32,22 @@
     "bugs": {
         "url": "https://github.com/DarrenLevine/vscode-auto-debug/issues"
     },
-    "activationEvents": [
-        "onCommand:auto-debug.auto-debug",
+"activationEvents": [
+        "onCommand:auto-debug-no-workspace.auto-debug",
         "onDebug"
     ],
     "main": "./dist/extension.js",
     "contributes": {
-        "commands": [
+"commands": [
             {
-                "command": "auto-debug.auto-debug",
-                "title": "auto-debug"
+                "command": "auto-debug-no-workspace.auto-debug",
+                "title": "auto-debug-no-workspace"
             }
         ],
         "debuggers": [
             {
-                "type": "auto-debug",
-                "label": "Auto Debug",
+                "type": "auto-debug-no-workspace",
+                "label": "Auto Debug (No Workspace)",
                 "program": "no program",
                 "configurationAttributes": {
                     "launch": {
@@ -65,10 +65,10 @@
                         }
                     }
                 },
-                "initialConfigurations": [
+"initialConfigurations": [
                     {
                         "name": "auto",
-                        "type": "auto-debug",
+                        "type": "auto-debug-no-workspace",
                         "request": "launch",
                         "map": {
                             "*.py": "Python: Current File"
@@ -77,11 +77,11 @@
                 ],
                 "configurationSnippets": [
                     {
-                        "label": "Auto Debug: Configuration",
+                        "label": "Auto Debug (No Workspace): Configuration",
                         "description": "Defines a key-value map to switch launch.json configurations based on active file glob.",
                         "body": {
                             "name": "auto",
-                            "type": "auto-debug",
+                            "type": "auto-debug-no-workspace",
                             "request": "launch",
                             "map": {
                                 "*.py": "Python: Current File"

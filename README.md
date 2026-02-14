@@ -1,3 +1,5 @@
+本仓库为原插件的修改版，使用 opencode 在 AI 的辅助下实现。本修改版可以在单文件情况下自动根据文件后缀寻找匹配的调试选项（需要在 settings.json 中提前配置）。
+
 # <img src="images/auto_debug_icon.png" alt="drawing" width="50"/> Auto Debug extension for Visual Studio Code
 
 Automatically switches your debugger/launch configuration based on what file you have active. Enables automated language-aware debugging.
