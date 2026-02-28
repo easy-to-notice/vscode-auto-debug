@@ -1,6 +1,6 @@
-本仓库为原插件的修改版，使用 opencode 在 AI 的辅助下实现，该插件可以根据文件后缀名自动寻找匹配的调试配置。本修改版修复了本人在使用原版插件时遇到的问题。使用时请将配置中的 `"type":"auto-debug"` 更改为 `"type":"auto-debug-no-workspace"`。
+本仓库为原插件的修改版，使用 opencode 在 AI 的辅助下实现，该插件可以根据文件后缀名自动寻找匹配的调试配置。本修改版修复了本人在使用原版插件时遇到 `no active workspaceFolders` 的问题。使用时请将配置中的 `"type":"auto-debug"` 更改为 `"type":"auto-debug-no-workspace"`。
 
-A modified version of the original plugin, built with AI assistance using OpenCode. This plugin automatically matches debug configurations by file extension. This version resolves issues I faced with the original plugin. For usage, update `"type":"auto-debug"` in the config to `"type":"auto-debug-no-workspace"`.
+A modified version of the original plugin, built with AI assistance using OpenCode. This plugin automatically matches debug configurations by file extension. This version resolves issues of `no active workspaceFolders` I faced with the original plugin. For usage, update `"type":"auto-debug"` in the config to `"type":"auto-debug-no-workspace"`.
 
 `settings.json` example：
 
