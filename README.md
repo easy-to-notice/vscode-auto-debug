@@ -2,6 +2,90 @@
 
 A modified version of the original plugin, built with AI assistance using OpenCode. This plugin automatically matches debug configurations by file extension. This version resolves issues I faced with the original plugin. For usage, update `"type":"auto-debug"` in the config to `"type":"auto-debug-no-workspace"`.
 
+`settings.json` example：
+
+```json
+{
+	"launch": {
+		 "configurations": [
+        {
+            "name": "C++ debug",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${fileDirname}/${fileBasenameNoExtension}.exe",
+            "args": [],
+            "stopAtEntry": false,		
+            "cwd": "${fileDirname}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "miDebuggerPath": "D:/RedPanda-Cpp/mingw64/bin/gdb.exe",
+            "setupCommands": [
+                {
+                    "description": "为 gdb 启用整齐打印",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "将反汇编风格设置为 Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "C/C++: g++.exe 生成活动文件"
+        },
+		{
+			"name": "Python debug",
+			"type": "debugpy",
+			"request": "launch",
+			"program": "${file}",
+			"justMyCode": true,
+			// "stopOnEntry": true
+		},
+		{
+			"name": "auto debug",
+			"type": "auto-debug-no-workspace",
+			"request": "launch",
+			"map": {
+                "*.py": "Python debug",
+                "*.cpp": "C++ debug",
+				"*.c": "C++ debug"
+            }
+		}
+    ],
+    "version": "2.0.0"
+	},
+	
+	"tasks": {
+		"tasks": [
+			{
+				"type": "cppbuild",
+				"label": "C/C++: g++.exe 生成活动文件",
+				"command": "D:/RedPanda-Cpp/mingw64/bin/g++.exe",
+				"args": [
+					"-fdiagnostics-color=always",
+					"-g",
+					"${file}",
+					"-o",
+					"${fileDirname}\\${fileBasenameNoExtension}.exe"
+				],
+				"options": {
+					"cwd": "D:/RedPanda-Cpp/mingw64/bin"
+				},
+				"problemMatcher": [
+					"$gcc"
+				],
+				"group": {
+					"kind": "build",
+					"isDefault": true
+				},
+				"detail": "调试器生成的任务。"
+			}
+		],
+		"version": "2.0.0"
+	}
+}
+```
 ---
 
 # <img src="images/auto_debug_icon.png" alt="drawing" width="50"/> Auto Debug extension for Visual Studio Code
